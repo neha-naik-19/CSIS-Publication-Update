@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two&family=Patua+One&family=Rubik&family=Montserrat&family=Sniglet&display=swap&family=Poppins:wght@200&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"); */
+
+:root {
+    --Montserrat: "Montserrat", cursive;
+    --Snigle-font: "Sniglet", cursive;
+    --Rubik: "Rubik", cursive;
+    --Patua: "Patua+One", cursive;
+    --Lobster: "Lobster+Two", cursive;
+    --poppins: "poppins", cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(55deg, #ea1f25, #faaf19, #313376, #ea1f25);
+    --light-gray: rgb(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+}
+
+html,
+body {
+    height: 100%;
+    padding-top: 4%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #efefef;
+    align-items: center;
+    justify-content: center;
+}
+
+header .navbar .container-fluid {
+    background-color: white;
+    border-bottom: 5px solid #313376;
+}
+
+header .navbar-light .navbar-brand .bits {
+    color: #313376;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 2vh;
+}
+
+header .annualreport {
+    padding-left: 17%;
+    color: #71c1e6;
+    letter-spacing: 3px;
+}
+
+.headercontainer {
+    position: relative;
+}
+
+header .dept {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 1%;
+}
+
+header .dept span {
+    /* color: #696969; */
+    color: #313376;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+header .dept a i {
+    text-decoration: none;
+    color: #71c1e6;
+    font-size: 150%;
+}
+
+header .navbar-light .navbar-brand img {
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+header .navbar-light .navbar-brand:focus,
+header .navbar-light .navbar-brand:hover {
+    color: #000;
+}
+
+header .navbar {
+    /* margin-bottom: 10%; */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+main.pubadd .card,
+main.pubeditview .card {
+    border: 0;
+    border-radius: 0.1875rem;
+    width: 90%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    /* position: relative; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* main.pubadd .card .card-title {
+    padding: 5px 0 20px 0;
+} */
+
+main.pubadd .card .card-header,
+main.pubeditview .card .card-header {
+    background: #fff;
+}
+
+main.pubadd .pubaddheadersmall,
+main.pubeditview .pubeditviewheadersmall {
+    color: #808080;
+    margin-left: 2%;
+    font-size: 70%;
+}
+
+main.pubadd .container header,
+main.pubeditview .container header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+main.pubadd .container header::before,
+main.pubeditview .container header::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    left: 0;
+    border-radius: 8px;
+    /* background-color: #4070f4; */
+    background-color: #ea1f25;
+}
+
+main.pubadd .container form .card,
+main.pubeditview .container .card {
+    position: relative;
+    /* min-height: 490px; */
+    /* margin-top: 2%; */
+    background-color: #fff;
+    height: 74%;
+    max-height: 74%;
+    overflow-y: auto;
+}
+
+main.pubadd .container form .card,
+main.pubeditview .container .card {
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+main.pubadd .container form .card.second {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sectiondeactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sectionactive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+main.pubadd .container form .card .card-header .pubaddrefresh,
+main.pubeditview .container .card .card-header .pubeditviewrefresh {
+    color: #71c1e6;
+}
+
+/* main.pubadd .container form .input-field,
+main.pubeditview .container .input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 10%;
+} */
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 10%;
+}
+
+/* main.pubadd .input-field label,
+main.pubeditview .input-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2e2e2e;
+} */
+
+.input-field label,
+.select-field-ranking label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+/* main.pubadd .input-field input,
+main.pubadd .input-field select,
+main.pubadd .input-field textarea,
+main.pubeditview .input-field input,
+main.pubeditview .input-field select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+} */
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    /* color: #333; */
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+/* 
+main.pubadd .form-check input {
+    margin: 25px 0;
+} */
+
+.pubaddformcheck {
+    padding: 10% 35% 15%;
+}
+
+/* main.pubadd .form-check label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e2e2e;
+} */
+
+.form-check label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #141414;
+}
+
+/* main.pubadd .input-field textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+} */
+
+.input-field textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+}
+
+/* main.pubadd .input-field select:is(:focus, :valid) {
+    background: #fff;
+} */
+
+.input-field select:is(:focus, :valid) {
+    background: #fff;
+}
+
+/* main.pubadd .input-field input:is(:focus, :valid),
+main.pubadd .input-field select:is(:focus, :valid),
+main.pubadd .input-field textarea:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+} */
+
+.input-field input:is(:focus, :valid),
+.input-field select:is(:focus, :valid),
+.input-field textarea:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+/* main.pubadd .input-field select,
+main.pubadd .input-field textarea {
+    color: #707070;
+} */
+
+.input-field select,
+.input-field textarea {
+    color: #141414;
+}
+
+/* main.pubadd .input-field input[type="date"] {
+    color: #707070;
+} */
+
+.input-field input[type="date"] {
+    color: #141414;
+}
+
+/* main.pubadd .input-field input[type="text"]:valid,
+main.pubadd .input-field input[type="date"]:valid,
+main.pubadd .input-field input[type="textarea"]:valid {
+    color: #000;
+} */
+
+.input-field input[type="text"]:valid,
+.input-field input[type="date"]:valid,
+.input-field input[type="textarea"]:valid {
+    color: #141414;
+}
+
+/* main.pubadd {
+    overflow: auto;
+} */
+
+main {
+    overflow: auto;
+}
+
+main.pubadd .btnpublication,
+main.pubeditview .btnpublication {
+    background: #71c1e6;
+    padding: 10px 0;
+    max-width: 120px;
+    width: 100%;
+    outline: #71c1e6;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 2% 0;
+    margin-left: calc(var(--bs-gutter-x) * 1.2);
+    transition: all 0.3s linear;
+}
+
+main.pubadd .pubaddbtnsubmit {
+    background: #faaf19;
+}
+
+main.pubadd .second {
+    margin-bottom: 10%;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    background: #343434;
+    font-size: 13px;
+    overflow-x: hidden;
+}
+
+footer .container-fluid p {
+    text-align: right;
+    margin-top: 1vmax;
+    margin-right: 1%;
+}
+
+footer #imgdiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+    margin-right: 1%;
+}
+
+/******* publication author table *******/
+
+main.pubadd .container form #pubaddtitledisplay {
+    color: #707070;
+    font-size: 13px;
+    width: 2%;
+}
+
+main.pubadd .container form .pubaddtablewrapper {
+    width: 90%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+main.pubadd .container form .pubaddtabletitle {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+
+main.pubadd .container form .pubaddtabletitle .pubaddnew {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
+    color: #fff;
+}
+
+main.pubadd .container form .pubaddtabletitle .pubaddnew i {
+    margin-right: 4px;
+}
+
+.pubaddtablediv,
+.pubeditviewtablediv {
+    /* border: 1px solid red; */
+    height: 330px;
+    max-height: 330px;
+    overflow-y: auto;
+}
+
+table.pubaddtable,
+table.pubeditviewtable {
+    table-layout: fixed;
+    max-height: 330px;
+}
+
+table.pubaddtable tr th,
+table.pubeditviewtable tr th {
+    background: #435d7d;
+    color: #fff;
+}
+
+table.pubaddtable tr th,
+table.pubaddtable tr td,
+table.pubeditviewtable tr th,
+table.pubeditviewtable tr td {
+    border-color: #e9e9e9;
+}
+
+table.pubaddtable th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+table.pubaddtable th:first-child,
+table.pubeditviewtable th:first-child {
+    width: 100px;
+}
+
+table.pubaddtable th:last-child {
+    width: 100px;
+}
+
+table.pubaddtable td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+}
+
+table.pubaddtable td a.pubaddadd {
+    color: #27c46b;
+}
+table.pubaddtable td a.pubaddedit {
+    color: #ffc107;
+}
+table.pubaddtable td a.pubadddelete {
+    color: #e34724;
+}
+
+table.pubaddtable td i {
+    font-size: 19px;
+}
+
+table.pubaddtable td a.pubaddadd i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+}
+
+table.pubaddtable .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+table.pubaddtable .form-control.error {
+    border-color: #f50000;
+}
+table.pubaddtable td .pubaddadd {
+    display: none;
+}
+
+table.pubaddtable tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+
+table.pubaddtable.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.pubaddnavpage {
+    float: right;
+    /* display: none; */
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/******* publication author table *******/
+
+/******* publication editview *******/
+
+/* main.pubeditview .container .card {
+    position: relative;
+    background-color: #fff;
+    height: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+} */
+
+main.pubeditview #pubeditviewdate span:hover {
+    cursor: pointer;
+}
+
+.datepicker.datepicker-dropdown:before {
+    display: none;
+}
+
+main.pubeditview #pubeditviewdate {
+    background: #fff
+        url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+        97% 50% no-repeat;
+}
+
+.pubeditviewformcheck {
+    padding-bottom: 10%;
+}
+
+main.pubeditview .select-field {
+    margin-left: 10%;
+    margin-right: 18%;
+    padding: 10% 7% 10%;
+}
+
+/* main.pubeditview .select-field-ranking {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+} */
+
+/* main.pubeditview .select-field-ranking .pubeditviewdivul {
+
+} */
+
+main.pubeditview .select-field-ranking {
+    height: 90%;
+    max-height: 90%;
+}
+
+main.pubeditview .select-field-ranking .pubeditviewdivul {
+    padding-right: 10%;
+    margin-top: 5%;
+    height: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+main.pubeditview .select-field-ranking .pubeditviewdivul ul {
+    max-height: 75%;
+}
+
+/******* publication editview *******/

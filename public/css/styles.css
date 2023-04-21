@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two&family=Patua+One&family=Rubik&family=Montserrat&family=Sniglet&display=swap");
+
+:root {
+    --Montserrat: "Montserrat", cursive;
+    --Snigle-font: "Sniglet", cursive;
+    --Rubik: "Rubik", cursive;
+    --Patua: "Patua+One", cursive;
+    --Lobster: "Lobster+Two", cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(55deg, #ea1f25, #faaf19, #313376, #ea1f25);
+    --light-gray: rgb(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Montserrat);
+}
+
+html,
+body {
+    height: 100%;
+    padding-top: 50px;
+}
+
+body {
+    background: #efefef;
+}
+
+header .navbar .container-fluid {
+    background-color: white;
+    border-bottom: 5px solid #313376;
+}
+
+header .navbar-light .navbar-brand .bits {
+    color: #313376;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 2vh;
+}
+
+header .annualreport {
+    padding-left: 17%;
+    color: #71c1e6;
+    letter-spacing: 3px;
+}
+
+header .navbar-light .navbar-brand img {
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+header .navbar-light .navbar-brand:focus,
+header .navbar-light .navbar-brand:hover {
+    color: #000;
+}
+
+main {
+    overflow: auto;
+}
+
+header .navbar {
+    /* margin-bottom: 10%; */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.accordion-button:not(.collapsed) {
+    /* color: var(--bs-accordion-active-color);
+    background-color: var(--bs-accordion-active-bg);
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+        var(--bs-accordion-border-color); */
+
+    color: white;
+    background-color: #413839;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+        var(--bs-accordion-border-color);
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgba(39, 156, 136, 0.25) !important;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    background: #343434;
+    font-size: 13px;
+    overflow-x: hidden;
+}
+
+footer .container-fluid p {
+    text-align: right;
+    margin-top: 1vmax;
+    margin-right: 1%;
+}
+
+footer #imgdiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+    margin-right: 1%;
+}
+
+/******* nav tab style *******/
+.card {
+    border: 0;
+    border-radius: 0.1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-header {
+    background-color: transparent;
+    border-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+}
+
+.card .nav-tabs {
+    border-top-right-radius: 0.1875rem;
+    border-top-left-radius: 0.1875rem;
+}
+
+.nav-tabs .nav-link {
+    color: #888888;
+    margin: 0;
+    margin-right: 5px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 11px 23px;
+    line-height: 1.5;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #444;
+    border-radius: 30px;
+    /* color: #ffffff; */
+    color: #faaf19;
+}
+
+.nav-tabs:not(.nav-tabs-neutral) .nav-link.active {
+    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
+}
+/******* nav tab style *******/
+
+/******* jquery *******/
+.colstyle {
+    font-size: 13px;
+    font-family: var(--Montserrat);
+    font-weight: bold;
+    color: #484848;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.colstyle p {
+    color: #313376;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.next {
+    rotate: 180deg;
+}
+
+.prevnextcontainer {
+    width: 100%;
+    display: flex;
+}
+
+.prevnextcontainer span {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #313376;
+    font-weight: bold;
+}
+
+.event {
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    background-color: #71c1e6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lastevent {
+    background-color: #d3d3d3;
+}
+
+.addedevent {
+    background-color: #71c1e6;
+}
+
+.eventdefaultpointer {
+    cursor: default;
+}
+
+.eventpointer {
+    cursor: pointer;
+}
+
+#prevnextspan {
+    padding: 0 10%;
+}
+
+.collink {
+    width: fit-content;
+    text-align: center;
+}
+
+.collink a {
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    font-family: var(--Montserrat);
+    margin-bottom: 2%;
+    color: #313376;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+}
+
+/******* jquery *******/

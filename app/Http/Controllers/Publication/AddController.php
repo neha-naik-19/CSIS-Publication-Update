@@ -25,7 +25,7 @@ class AddController extends Controller
         date_default_timezone_set("Asia/kolkata");
 
         // Fetch AuthorTypes
-        $authortypeData['data'] = authortypes::orderby("authortype","asc")
+        $authortypeData['data'] = Authortypes::orderby("authortype","asc")
         ->select('id','authortype')
         ->get();
 
@@ -35,18 +35,18 @@ class AddController extends Controller
         ->get();
 
         // Fetch only Rankings -> Others
-        $rankingsOnlyAstarData = rankings::select('id','ranking')
+        $rankingsOnlyAstarData = Rankings::select('id','ranking')
         ->where('ranking','=','Core A*')
         ->get();                        
         
         // Fetch w/o Rankings -> Others
-        $rankingsNoOthersData = rankings::orderby("ranking","asc")
+        $rankingsNoOthersData = Rankings::orderby("ranking","asc")
         ->select('id','ranking')
         ->whereNotIn('ranking', ['Core A*','Others'])
         ->get();                         
 
         // Fetch only Rankings -> Others
-        $rankingsOnlyOthersData = rankings::select('id','ranking')
+        $rankingsOnlyOthersData = Rankings::select('id','ranking')
         ->where('ranking','=','Others')
         ->get();
 
@@ -54,7 +54,7 @@ class AddController extends Controller
         $rankingsData['data'] = $rankingsOnlyAstarData->merge($rankingsNoOthersData)->merge($rankingsOnlyOthersData);
 
         //Fetch Broadareas
-        $broadareasData['data'] = broadareas::orderby("broadarea","asc")
+        $broadareasData['data'] = Broadareas::orderby("broadarea","asc")
         ->select('id','broadarea')
         ->get();
 

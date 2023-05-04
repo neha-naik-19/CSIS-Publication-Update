@@ -3,7 +3,7 @@
 
 
 @section('pubadd')
-<div class="container mt-5">
+<div class="container mt-5" id="pubaddcontainer">
     <input type="hidden" name="application_url" id="application_url" value="{{URL::to(Request::route()->getPrefix())}}"/>
     <input type="hidden" name="departmentid" id="departmentid" value={{ request()->id }}/>
     <form class="pubaddform" action="" method="POST" autocomplete="off">
@@ -217,7 +217,11 @@
         <div class="card second">
             <div class="card-header sticky-top">
                 <div class="row">
-                    <header>Publication <small class="pubaddheadersmall">New Record</small></header>
+                    <div class="col-md-6 col-sm-12">
+                        <header>Publication <small class="pubaddheadersmall">New Record</small></header>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                    </div>
                 </div>
             </div>
             <div class="card-body">

@@ -12,6 +12,8 @@ class BibtexController extends Controller
         //Date Format
         date_default_timezone_set("Asia/kolkata");
 
-        return view('publication.pubbibtex');
+
+        return view('publication.pubbibtex')->with('departmentId',request()->id)->with('department',request()->dept);
     }
 }
+    

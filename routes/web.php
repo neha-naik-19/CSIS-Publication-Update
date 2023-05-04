@@ -37,9 +37,24 @@ Route::get('check_conference_duplication', [App\Http\Controllers\Publication\Add
 Route::post('writetodb', [App\Http\Controllers\Publication\AddController::class, 'store']);
 //
 
-Route::get('/publication/view-edit',  [App\Http\Controllers\Publication\EditController::class, 'index'])->name('publication.edit');
 
+// PUBLICATION - EDIT
+Route::get('/publication/view-edit',  [App\Http\Controllers\Publication\EditController::class, 'index'])->name('publication.edit');
+Route::get('editviewauthorsearch', [App\Http\Controllers\Publication\EditController::class, 'showauthor']);
+Route::post('displaysearch',[App\Http\Controllers\Publication\EditController::class, 'getsearchresult']);
+Route::post('deletesearch/{id}', [App\Http\Controllers\Publication\EditController::class, 'deleterecord']);
+//
+
+
+// PUBLICATION - UPDATE
+Route::get('/publication/update',  [App\Http\Controllers\Publication\UpdateController::class, 'index'])->name('publication.update');
+Route::post('updatetodb', [App\Http\Controllers\Publication\UpdateController::class, 'store']);
+//
+
+
+// PUBLICATION - BIBTEX
 Route::get('/publication/bibtex', [App\Http\Controllers\Publication\BibtexController::class, 'index'])->name('publication.bibtex');
+//
 
 Route::get('/publication/print', [App\Http\Controllers\Publication\PrintController::class, 'index'])->name('publication.print');
 

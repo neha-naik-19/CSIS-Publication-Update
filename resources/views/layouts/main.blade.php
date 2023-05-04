@@ -24,7 +24,7 @@
             <img class="rounded" src="../image/BITS_Logo.jpg" alt="BITS Logo">
             <span class="bits">bits pilani k. k. birla goa campus <br><span class="annualreport">annual report</span></span>
             <div class="dept">
-              <span>{{strtoupper($department)}}</span>
+              <span>{{strtoupper($department ?? '')}}</span>
               <a href="{{ route('home') }}">
                 <i class="fa fa-house"></i>
               </a>
@@ -40,6 +40,14 @@
 
     <main class="pubeditview">
       @yield('pubeditview')
+    </main>
+
+    <main class="pubupdate">
+      @yield('pubupdate')
+    </main>
+
+    <main class="pubbib">
+      @yield('pubbib')
     </main>
 
     <footer class="footer fixed-bottom">

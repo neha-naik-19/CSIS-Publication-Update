@@ -20,18 +20,6 @@
             <img class="rounded" src="../image/BITS_Logo.jpg" alt="BITS Logo">
             <span class="bits">bits pilani k. k. birla goa campus <br><span class="annualreport">annual report</span></span>
           </a>
-          <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-
-                aria-label="Toggle navigation"
-              >
-          <span className="navbar-toggler-icon"></span>
-          </button> 
         </div>
       </nav>
     </header>

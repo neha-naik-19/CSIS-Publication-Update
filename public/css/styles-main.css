@@ -102,7 +102,9 @@ header .navbar {
 }
 
 main.pubadd .card,
-main.pubeditview .card {
+main.pubeditview .card,
+main.pubupdate .card,
+main.pubbib .card {
     border: 0;
     border-radius: 0.1875rem;
     width: 90%;
@@ -118,19 +120,25 @@ main.pubeditview .card {
 } */
 
 main.pubadd .card .card-header,
-main.pubeditview .card .card-header {
+main.pubeditview .card .card-header,
+main.pubupdate .card .card-header,
+main.pubbib .card .card-header {
     background: #fff;
 }
 
 main.pubadd .pubaddheadersmall,
-main.pubeditview .pubeditviewheadersmall {
+main.pubeditview .pubeditviewheadersmall,
+main.pubupdate .pubupdateheadersmall,
+main.pubbib .pubbibheadersmall {
     color: #808080;
     margin-left: 2%;
     font-size: 70%;
 }
 
 main.pubadd .container header,
-main.pubeditview .container header {
+main.pubeditview .container header,
+main.pubupdate .container header,
+main.pubbib .container header {
     position: relative;
     font-size: 20px;
     font-weight: 600;
@@ -138,7 +146,9 @@ main.pubeditview .container header {
 }
 
 main.pubadd .container header::before,
-main.pubeditview .container header::before {
+main.pubeditview .container header::before,
+main.pubupdate .container header::before,
+main.pubbib .container header::before {
     content: "";
     position: absolute;
     bottom: -2px;
@@ -151,7 +161,9 @@ main.pubeditview .container header::before {
 }
 
 main.pubadd .container form .card,
-main.pubeditview .container .card {
+main.pubeditview .container .card,
+main.pubupdate .container form .card,
+main.pubbib .container form .card {
     position: relative;
     /* min-height: 490px; */
     /* margin-top: 2%; */
@@ -162,12 +174,27 @@ main.pubeditview .container .card {
 }
 
 main.pubadd .container form .card,
-main.pubeditview .container .card {
+main.pubeditview .container .card,
+main.pubupdate .container form .card,
+main.pubbib .container form .card {
     position: absolute;
     transition: 0.3s ease;
 }
 
-main.pubadd .container form .card.second {
+/* main.pubadd .container form .card.second,
+main.pubeditview .container .card.second {
+    opacity: 0;
+    pointer-events: none;
+} */
+
+main.pubadd .container form .card.second,
+main.pubupdate .container form .card.second,
+main.pubbib .container form .card.second {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main.pubeditview .container .card.second {
     opacity: 0;
     pointer-events: none;
 }
@@ -183,7 +210,8 @@ main.pubadd .container form .card.second {
 }
 
 main.pubadd .container form .card .card-header .pubaddrefresh,
-main.pubeditview .container .card .card-header .pubeditviewrefresh {
+main.pubeditview .container .card .card-header .pubeditviewrefresh,
+main.pubbib .container .card .card-header .pubbibrefresh {
     color: #71c1e6;
 }
 
@@ -249,7 +277,8 @@ main.pubadd .form-check input {
     margin: 25px 0;
 } */
 
-.pubaddformcheck {
+.pubaddformcheck,
+.pubupdateformcheck {
     padding: 10% 35% 15%;
 }
 
@@ -342,7 +371,9 @@ main {
 }
 
 main.pubadd .btnpublication,
-main.pubeditview .btnpublication {
+main.pubeditview .btnpublication,
+main.pubupdate .btnpublication,
+main.pubbib .btnpublication {
     background: #71c1e6;
     padding: 10px 0;
     max-width: 120px;
@@ -390,13 +421,15 @@ footer #imgdiv {
 
 /******* publication author table *******/
 
-main.pubadd .container form #pubaddtitledisplay {
+main.pubadd .container form #pubaddtitledisplay,
+main.pubupdate .container form #pubupdatetitledisplay {
     color: #707070;
     font-size: 13px;
     width: 2%;
 }
 
-main.pubadd .container form .pubaddtablewrapper {
+main.pubadd .container form .pubaddtablewrapper,
+main.pubupdate .container form .pubupdatetablewrapper {
     width: 90%;
     margin: 30px auto;
     background: #fff;
@@ -404,12 +437,14 @@ main.pubadd .container form .pubaddtablewrapper {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-main.pubadd .container form .pubaddtabletitle {
+main.pubadd .container form .pubaddtabletitle,
+main.pubupdate .container form .pubupdatetabletitle {
     padding-bottom: 10px;
     margin: 0 0 10px;
 }
 
-main.pubadd .container form .pubaddtabletitle .pubaddnew {
+main.pubadd .container form .pubupdatetabletitle .pubaddnew,
+main.pubupdate .container form .pubupdatetabletitle .pubaddnew {
     float: right;
     height: 30px;
     font-weight: bold;
@@ -420,12 +455,13 @@ main.pubadd .container form .pubaddtabletitle .pubaddnew {
     color: #fff;
 }
 
-main.pubadd .container form .pubaddtabletitle .pubaddnew i {
+main.pubadd .container form .pubaddtabletitle .pubaddnew i,
+main.pubupdate .container form .pubupdatetabletitle .pubupdatenew i {
     margin-right: 4px;
 }
 
 .pubaddtablediv,
-.pubeditviewtablediv {
+.pubupdatetablediv {
     /* border: 1px solid red; */
     height: 330px;
     max-height: 330px;
@@ -433,85 +469,115 @@ main.pubadd .container form .pubaddtabletitle .pubaddnew i {
 }
 
 table.pubaddtable,
-table.pubeditviewtable {
+table.pubupdatetable {
     table-layout: fixed;
     max-height: 330px;
 }
 
+/*** check from here for update ***/
+
 table.pubaddtable tr th,
-table.pubeditviewtable tr th {
+table.pubeditviewtable tr th,
+table.pubeditviewtablesearchresult tr th,
+table.pubupdatetable tr th {
     background: #435d7d;
+    /* background: #313376; */
     color: #fff;
 }
 
 table.pubaddtable tr th,
 table.pubaddtable tr td,
 table.pubeditviewtable tr th,
-table.pubeditviewtable tr td {
+table.pubeditviewtable tr td,
+table.pubeditviewtablesearchresult tr th,
+table.pubeditviewtablesearchresult tr td,
+table.pubupdatetable tr th,
+table.pubupdatetable tr td {
     border-color: #e9e9e9;
 }
 
-table.pubaddtable th i {
+table.pubaddtable th i,
+table.pubeditviewtablesearchresult th i,
+table.pubupdatetable th i {
     font-size: 13px;
     margin: 0 5px;
     cursor: pointer;
 }
 
 table.pubaddtable th:first-child,
-table.pubeditviewtable th:first-child {
+table.pubeditviewtable th:first-child,
+table.pubupdatetable th:first-child {
     width: 100px;
 }
 
-table.pubaddtable th:last-child {
+table.pubaddtable th:last-child,
+table.pubupdatetable th:last-child {
     width: 100px;
 }
 
-table.pubaddtable td a {
+table.pubaddtable td a,
+table.pubeditviewtablesearchresult td a,
+table.pubupdatetable td a {
     cursor: pointer;
     display: inline-block;
     margin: 0 5px;
     min-width: 24px;
 }
 
-table.pubaddtable td a.pubaddadd {
+table.pubaddtable td a.pubaddadd,
+table.pubupdatetable td a.pubupdateadd {
     color: #27c46b;
 }
-table.pubaddtable td a.pubaddedit {
+
+table.pubaddtable td a.pubaddedit,
+table.pubupdatetable td a.pubupdateedit {
     color: #ffc107;
 }
-table.pubaddtable td a.pubadddelete {
+
+table.pubaddtable td a.pubadddelete,
+table.pubupdatetable td a.pubupdatedelete {
     color: #e34724;
 }
 
-table.pubaddtable td i {
+table.pubaddtable td i,
+table.pubeditviewtablesearchresult td i,
+table.pubupdatetable td i {
     font-size: 19px;
 }
 
-table.pubaddtable td a.pubaddadd i {
+table.pubaddtable td a.pubaddadd i,
+table.pubupdatetable td a.pubupdateadd i {
     font-size: 24px;
     margin-right: -1px;
     position: relative;
     top: 3px;
 }
 
-table.pubaddtable .form-control {
+table.pubaddtable .form-control,
+table.pubupdatetable .form-control {
     height: 32px;
     line-height: 32px;
     box-shadow: none;
     border-radius: 2px;
 }
-table.pubaddtable .form-control.error {
+
+table.pubaddtable .form-control.error,
+table.pubupdatetable .form-control.error {
     border-color: #f50000;
 }
-table.pubaddtable td .pubaddadd {
+
+table.pubaddtable td .pubaddadd,
+table.pubupdatetable td .pubupdateadd {
     display: none;
 }
 
-table.pubaddtable tbody tr:nth-of-type(odd) {
+table.pubaddtable tbody tr:nth-of-type(odd),
+table.pubupdatetable tbody tr:nth-of-type(odd) {
     background-color: #fcfcfc;
 }
 
-table.pubaddtable.table-hover tbody tr:hover {
+table.pubaddtable.table-hover tbody tr:hover,
+table.pubupdatetable.table-hover tbody tr:hover {
     background: #f5f5f5;
 }
 
@@ -529,14 +595,6 @@ th {
 /******* publication author table *******/
 
 /******* publication editview *******/
-
-/* main.pubeditview .container .card {
-    position: relative;
-    background-color: #fff;
-    height: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-} */
 
 main.pubeditview #pubeditviewdate span:hover {
     cursor: pointer;
@@ -559,18 +617,8 @@ main.pubeditview #pubeditviewdate {
 main.pubeditview .select-field {
     margin-left: 10%;
     margin-right: 18%;
-    padding: 10% 7% 10%;
+    padding: 10% 7% 10% 0;
 }
-
-/* main.pubeditview .select-field-ranking {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 5%;
-} */
-
-/* main.pubeditview .select-field-ranking .pubeditviewdivul {
-
-} */
 
 main.pubeditview .select-field-ranking {
     height: 90%;
@@ -589,4 +637,169 @@ main.pubeditview .select-field-ranking .pubeditviewdivul ul {
     max-height: 75%;
 }
 
+.pubeditviewtablediv {
+    height: 290px;
+    max-height: 290px;
+    overflow-y: auto;
+}
+
+table.pubeditviewtable {
+    table-layout: fixed;
+    max-height: 290px;
+}
+
+/* custom checkbox */
+.custom-checkbox {
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    margin: 5px 0 0 3px;
+    z-index: 9;
+}
+
+.custom-checkbox label:before {
+    width: 18px;
+    height: 18px;
+}
+
+.custom-checkbox label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    transform: inherit;
+    z-index: 3;
+    transform: rotateZ(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+    border-color: #71c1e6;
+    background: #71c1e6;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    border-color: #fff;
+}
+
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
+    color: #b8b8b8;
+    cursor: auto;
+    box-shadow: none;
+    background: #ddd;
+}
+
+table.pubeditviewtablesearchresult td a.pubeditviewview {
+    color: #71c1e6;
+}
+table.pubeditviewtablesearchresult td a.pubeditviewedit {
+    color: #ffc107;
+}
+table.pubeditviewtablesearchresult td a.pubeditviewdelete {
+    color: #e34724;
+}
+
+table.pubeditviewtablesearchresult.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+
+table.pubeditviewtablesearchresult th:first-child {
+    width: 15%;
+}
+
+table.pubeditviewtablesearchresult th:first-child {
+    width: 10%;
+}
+
+table.pubeditviewtablesearchresult .pubeditviewcategory {
+    width: 10%;
+}
+
+table.pubeditviewtablesearchresult th:last-child {
+    width: 17%;
+}
+
+table.pubeditviewtablesearchresult tbody td:last-child {
+    /* padding: 5px; */
+    text-align: center;
+}
+
+table.pubeditviewtablesearchresult tbody td {
+    font-size: 14px;
+}
+
+table.pubeditviewtablesearchresult #pubeditviewlastchildtd a i {
+    font-size: 1.2em;
+}
+
+table.pubeditviewtablesearchresult #pubeditviewlastchildtd {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.pubeditviewtabledivsearchresult {
+    height: 545px;
+    max-height: 545px;
+    overflow-y: auto;
+}
+
+table.pubeditviewtablesearchresult {
+    table-layout: fixed;
+    max-height: 545px;
+}
+
+.pubeditviewtabledivsearchresult {
+    position: relative;
+}
+
+.pubeditviewspan {
+    font-family: var(--Lobster);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    opacity: 0;
+}
+
+.opacitydeactivate {
+    opacity: 0;
+}
+
+.opacityactivate {
+    opacity: 1;
+}
+
 /******* publication editview *******/
+
+/******* publication update *******/
+
+/* .pubupdatebtnupdate {
+    background: #ffc107;
+}
+
+.pubupdatebtndelete {
+    background-color: #e34724;
+} */
+
+/******* publication update *******/

@@ -50,6 +50,10 @@
       @yield('pubbib')
     </main>
 
+    <main class="pubprint">
+      @yield('pubprint')
+    </main>
+
     <footer class="footer fixed-bottom">
       <div class="container-fluid p-0">
         <p class="text-light text-muted">© {{ now()->year }} BITS Pilani Goa Campus</p>

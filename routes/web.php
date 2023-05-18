@@ -54,8 +54,18 @@ Route::post('updatetodb', [App\Http\Controllers\Publication\UpdateController::cl
 
 // PUBLICATION - BIBTEX
 Route::get('/publication/bibtex', [App\Http\Controllers\Publication\BibtexController::class, 'index'])->name('publication.bibtex');
+Route::post('getfiledata', [App\Http\Controllers\Publication\BibtexController::class, 'get_file_data']);
+Route::get('parsebibdata', [App\Http\Controllers\Publication\BibtexController::class, 'parse_bib_data']);
+Route::post('writebibtodb', [App\Http\Controllers\Publication\BibtexController::class, 'store']);
+Route::get('check_title_duplication_bib', [App\Http\Controllers\Publication\AddController::class, 'check_dup_title']);
+Route::get('check_conference_duplication_bib', [App\Http\Controllers\Publication\AddController::class, 'check_dup_conference']);
 //
 
+// PUBLICATION - PRINT
 Route::get('/publication/print', [App\Http\Controllers\Publication\PrintController::class, 'index'])->name('publication.print');
+Route::get('printauthorsearch', [App\Http\Controllers\Publication\PrintController::class, 'showauthor']);
+Route::post('printrequest',[App\Http\Controllers\Publication\PrintController::class, 'getprintrequest']);
+//
+
 
 // Route::get('/user', [UserController::class, 'index']);

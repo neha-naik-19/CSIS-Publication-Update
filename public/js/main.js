@@ -25,6 +25,8 @@ $(document).ready(function (e) {
         ////
     } else if ($(".container").attr("id").includes("update")) {
         actions = $(".pubupdatetable td:last-child").html();
+    } else if ($(".container").attr("id").includes("bib")) {
+        actions = $(".pubbibtable td:last-child").html();
     }
 
     $('[data-toggle="tooltip"]').tooltip();
@@ -55,18 +57,22 @@ $(document).ready(function (e) {
         backbutton("pubadd");
     });
 
-    //pubadd, pubupdate = pubaddinputdate > (date) change
-    $("#pubaddinputdate, #pubupdateinputdate").change(function () {
-        var replacedid = this.id.replace("input", "label");
-        if ($(this).val()) {
-            $("#" + replacedid).css({ color: "#2e2e2e" });
-        } else {
-            $("#" + replacedid).css({ color: "#ea1f25" });
+    //pubadd, pubupdate, pubbib = inputdate > (date) change
+    $("#pubaddinputdate, #pubupdateinputdate, #pubbibinputdate").change(
+        function () {
+            var replacedid = this.id.replace("input", "label");
+            if ($(this).val()) {
+                $("#" + replacedid).css({ color: "#2e2e2e" });
+            } else {
+                $("#" + replacedid).css({ color: "#ea1f25" });
+            }
         }
-    });
+    );
 
-    //pubadd, pubupdate = pubaddselectarticle > (select) change
-    $("#pubaddselectarticle, #pubaddselectarticle").change(function () {
+    //pubadd, pubupdate, pubbib = selectarticle > (select) change
+    $(
+        "#pubaddselectarticle, #pubaddselectarticle, #pubbibselectarticle"
+    ).change(function () {
         var replacedid = this.id.replace("select", "label");
 
         if (category.includes("conference")) {
@@ -78,8 +84,10 @@ $(document).ready(function (e) {
         }
     });
 
-    //pubadd, pubupdate = pubaddselectauthortype > (select) change
-    $("#pubaddselectauthortype, #pubaddselectauthortype").change(function () {
+    //pubadd, pubupdate, pubbib = selectauthortype > (select) change
+    $(
+        "#pubaddselectauthortype, #pubaddselectauthortype, #pubbibselectauthortype"
+    ).change(function () {
         var replacedid = this.id.replace("select", "label");
         if ($(this).val()) {
             $("#" + replacedid).css({ color: "#2e2e2e" });
@@ -93,63 +101,57 @@ $(document).ready(function (e) {
         categorychange("pubadd");
     });
 
-    //pubadd, pubupdate = pubaddselectdemography > (select) change
-    $("#pubaddselectdemography, #pubupdateselectdemography").change(
-        function () {
-            var replacedid = this.id.replace("select", "label");
-            if ($(this).val()) {
-                $("#" + replacedid).css({ color: "#2e2e2e" });
-            } else {
-                $("#" + replacedid).css({ color: "#ea1f25" });
-            }
-        }
-    );
-
-    //pubadd, pubupdate = pubaddselectconference > (select) change
-    $("#pubaddselectconference, #pubupdateselectconference").change(
-        function () {
-            var replacedid = this.id.replace("select", "label");
-            if ($(this).val()) {
-                $("#" + replacedid).css({ color: "#2e2e2e" });
-            } else {
-                $("#" + replacedid).css({ color: "#ea1f25" });
-            }
-        }
-    );
-
-    //pubadd, pubupdate = pubaddselectranking > (select) change
-    $("#pubaddselectranking, #pubupdateselectranking").change(function () {
-        var replacedid = this.id.replace("select", "label");
-        if ($(this).val()) {
-            $("#" + replacedid).css({ color: "#2e2e2e" });
-        } else {
-            $("#" + replacedid).css({ color: "#ea1f25" });
-        }
-    });
-
-    //pubadd, pubupdate = pubaddselectbroadarea > (select) change
-    $("#pubaddselectbroadarea, #pubupdateselectbroadarea").change(function () {
-        var replacedid = this.id.replace("select", "label");
-        if ($(this).val()) {
-            $("#" + replacedid).css({ color: "#2e2e2e" });
-        } else {
-            $("#" + replacedid).css({ color: "#ea1f25" });
-        }
-    });
-
-    //pubadd, pubupdate = pubaddtextareatitle > (textarea) change
-    $("#pubaddtextareatitle, #pubupdatetextareatitle").change(function () {
-        var replacedid = this.id.replace("textarea", "label");
-        if ($(this).val()) {
-            $("#" + replacedid).css({ color: "#2e2e2e" });
-        } else {
-            $("#" + replacedid).css({ color: "#ea1f25" });
-        }
-    });
-
-    //pubadd, pubupdate = pubaddtextareanameofconference > (textarea) change
+    //pubadd, pubupdate, pubbib = selectdemography > (select) change
     $(
-        "#pubaddtextareanameofconference, #pubupdatetextareanameofconference"
+        "#pubaddselectdemography, #pubupdateselectdemography, #pubbibselectdemography"
+    ).change(function () {
+        var replacedid = this.id.replace("select", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
+        }
+    });
+
+    //pubadd, pubupdate, pubbib = selectconference > (select) change
+    $(
+        "#pubaddselectconference, #pubupdateselectconference, #pubbibselectconference"
+    ).change(function () {
+        var replacedid = this.id.replace("select", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
+        }
+    });
+
+    //pubadd, pubupdate, pubbib = selectranking > (select) change
+    $(
+        "#pubaddselectranking, #pubupdateselectranking, #pubbibselectranking"
+    ).change(function () {
+        var replacedid = this.id.replace("select", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
+        }
+    });
+
+    //pubadd, pubupdate, pubbib = selectbroadarea > (select) change
+    $(
+        "#pubaddselectbroadarea, #pubupdateselectbroadarea, #pubbibselectbroadarea"
+    ).change(function () {
+        var replacedid = this.id.replace("select", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
+        }
+    });
+
+    //pubadd, pubupdate, pubbib = textareatitle > (textarea) change
+    $(
+        "#pubaddtextareatitle, #pubupdatetextareatitle, #pubbibtextareatitle"
     ).change(function () {
         var replacedid = this.id.replace("textarea", "label");
         if ($(this).val()) {
@@ -159,20 +161,22 @@ $(document).ready(function (e) {
         }
     });
 
-    //pubadd, pubupdate = pubaddinputimpactfactor > (text) change
-    $("#pubaddinputimpactfactor, #pubupdateinputimpactfactor").change(
-        function () {
-            var replacedid = this.id.replace("input", "label");
-            if ($(this).val()) {
-                $("#" + replacedid).css({ color: "#2e2e2e" });
-            } else {
-                $("#" + replacedid).css({ color: "#ea1f25" });
-            }
+    //pubadd, pubupdate, pubbib = textareanameofconference > (textarea) change
+    $(
+        "#pubaddtextareanameofconference, #pubupdatetextareanameofconference, #pubbibtextareanameofconference"
+    ).change(function () {
+        var replacedid = this.id.replace("textarea", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
         }
-    );
+    });
 
-    //pubadd, pubupdate = pubaddinputlocation > (text) change
-    $("#pubaddinputlocation, #pubupdateinputlocation").change(function () {
+    //pubadd, pubupdate, pubbib = inputimpactfactor > (text) change
+    $(
+        "#pubaddinputimpactfactor, #pubupdateinputimpactfactor, #pubbibinputimpactfactor"
+    ).change(function () {
         var replacedid = this.id.replace("input", "label");
         if ($(this).val()) {
             $("#" + replacedid).css({ color: "#2e2e2e" });
@@ -181,8 +185,22 @@ $(document).ready(function (e) {
         }
     });
 
-    //pubadd, pubupdate = pubaddinputpublisher > (text) change
-    $("#pubaddinputpublisher, #pubupdateinputpublisher").change(function () {
+    //pubadd, pubupdate, pubbib = inputlocation > (text) change
+    $(
+        "#pubaddinputlocation, #pubupdateinputlocation, #pubbibinputlocation"
+    ).change(function () {
+        var replacedid = this.id.replace("input", "label");
+        if ($(this).val()) {
+            $("#" + replacedid).css({ color: "#2e2e2e" });
+        } else {
+            $("#" + replacedid).css({ color: "#ea1f25" });
+        }
+    });
+
+    //pubadd, pubupdate, pubbib = inputpublisher > (text) change
+    $(
+        "#pubaddinputpublisher, #pubupdateinputpublisher, #pubbibinputpublisher"
+    ).change(function () {
         var replacedid = this.id.replace("input", "label");
         if ($(this).val()) {
             $("#" + replacedid).css({ color: "#2e2e2e" });
@@ -197,6 +215,8 @@ $(document).ready(function (e) {
             checkforallcheckboxes("pubadd");
         } else if ($(this).attr("id").includes("update")) {
             checkforallcheckboxes("pubupdate");
+        } else if ($(this).attr("id").includes("bib")) {
+            checkforallcheckboxes("pubbib");
         }
     });
 
@@ -208,95 +228,127 @@ $(document).ready(function (e) {
     });
 
     //pubadd, pubupdate = Add row on add button click
-    $(document).on("click", ".pubaddadd, .pubupdateadd", function (e) {
-        e.preventDefault();
+    $(document).on(
+        "click",
+        ".pubaddadd, .pubupdateadd, .pubbibadd",
+        function (e) {
+            e.preventDefault();
 
-        var empty = false;
-        var input = $(this).parents("tr").find('input[type="text"]');
-        input.each(function () {
-            if (!$(this).val()) {
-                $(this).addClass("error");
-                empty = true;
-            } else {
-                $(this).removeClass("error");
-            }
-        });
-        $(this).parents("tr").find(".error").first().focus();
-        if (!empty) {
+            var empty = false;
+            var input = $(this).parents("tr").find('input[type="text"]');
             input.each(function () {
-                $(this).parent("td").html($(this).val());
+                if (!$(this).val()) {
+                    $(this).addClass("error");
+                    empty = true;
+                } else {
+                    $(this).removeClass("error");
+                }
             });
+            $(this).parents("tr").find(".error").first().focus();
+            if (!empty) {
+                input.each(function () {
+                    $(this).parent("td").html($(this).val());
+                });
 
-            if ($(this).attr("class").includes("addadd")) {
-                $(this).parents("tr").find(".pubaddadd, .pubaddedit").toggle();
-                $(".pubaddnew").removeAttr("disabled");
+                if ($(this).attr("class").includes("addadd")) {
+                    $(this)
+                        .parents("tr")
+                        .find(".pubaddadd, .pubaddedit")
+                        .toggle();
+                    $(".pubaddnew").removeAttr("disabled");
+                }
+                if ($(this).attr("class").includes("updateadd")) {
+                    $(this)
+                        .parents("tr")
+                        .find(".pubupdateadd, .pubupdateedit")
+                        .toggle();
+                    $(".pubupdatenew").removeAttr("disabled");
+                }
+                if ($(this).attr("class").includes("bibadd")) {
+                    $(this)
+                        .parents("tr")
+                        .find(".pubbibadd, .pubbibedit")
+                        .toggle();
+                    $(".pubbibnew").removeAttr("disabled");
+                }
+
+                addnew = false;
             }
-            if ($(this).attr("class").includes("updateadd")) {
+        }
+    );
+
+    //pubadd, pubupdate = Edit row on edit button click
+    $(document).on(
+        "click",
+        ".pubaddedit, .pubupdateedit, .pubbibedit",
+        function (e) {
+            e.preventDefault();
+
+            $(this)
+                .parents("tr")
+                .find("td:not(:last-child)")
+                .each(function () {
+                    $(this).html(
+                        '<input type="text" class="form-control" value="' +
+                            $(this).text() +
+                            '">'
+                    );
+                });
+
+            if ($(this).attr("class").includes("add")) {
+                $(this).parents("tr").find(".pubaddadd, .pubaddedit").toggle();
+                $(".pubaddnew").attr("disabled", "disabled");
+            }
+
+            if ($(this).attr("class").includes("update")) {
                 $(this)
                     .parents("tr")
                     .find(".pubupdateadd, .pubupdateedit")
                     .toggle();
+                $(".pubupdatenew").attr("disabled", "disabled");
+            }
+
+            if ($(this).attr("class").includes("bib")) {
+                $(this).parents("tr").find(".pubbibadd, .pubbibedit").toggle();
+                $(".pubbibnew").attr("disabled", "disabled");
+            }
+
+            addnew = true;
+        }
+    );
+
+    //pubadd, pubupdate, pubbib => Delete row on delete button click
+    $(document).on(
+        "click",
+        ".pubadddelete, .pubupdatedelete, .pubbibdelete",
+        function (e) {
+            e.preventDefault();
+
+            $(this).parents("tr").remove();
+
+            $("table tbody")
+                .find("tr")
+                .each(function (index) {
+                    $($(this).find("td")[0]).text(index);
+                });
+
+            if ($(this).attr("class").includes("addadd")) {
+                $(".pubaddnew").removeAttr("disabled");
+            }
+
+            if ($(this).attr("class").includes("updateadd")) {
                 $(".pubupdatenew").removeAttr("disabled");
             }
 
+            if ($(this).attr("class").includes("bibadd")) {
+                $(".pubbibnew").removeAttr("disabled");
+            }
+
             addnew = false;
+
+            $(this).tooltip("hide");
         }
-    });
-
-    //pubadd, pubupdate = Edit row on edit button click
-    $(document).on("click", ".pubaddedit, .pubupdateedit", function (e) {
-        e.preventDefault();
-
-        $(this)
-            .parents("tr")
-            .find("td:not(:last-child)")
-            .each(function () {
-                $(this).html(
-                    '<input type="text" class="form-control" value="' +
-                        $(this).text() +
-                        '">'
-                );
-            });
-
-        if ($(this).attr("class").includes("add")) {
-            $(this).parents("tr").find(".pubaddadd, .pubaddedit").toggle();
-            $(".pubaddnew").attr("disabled", "disabled");
-        }
-
-        if ($(this).attr("class").includes("update")) {
-            $(this)
-                .parents("tr")
-                .find(".pubupdateadd, .pubupdateedit")
-                .toggle();
-            $(".pubupdatenew").attr("disabled", "disabled");
-        }
-
-        addnew = true;
-    });
-
-    //pubadd, pubupdate => Delete row on delete button click
-    $(document).on("click", ".pubadddelete, .pubupdatedelete", function (e) {
-        e.preventDefault();
-
-        $(this).parents("tr").remove();
-
-        $("table tbody")
-            .find("tr")
-            .each(function (index) {
-                $($(this).find("td")[0]).text(index);
-            });
-
-        if ($(this).attr("class").includes("addadd")) {
-            $(".pubaddnew").removeAttr("disabled");
-        }
-
-        if ($(this).attr("class").includes("updateadd")) {
-            $(".pubupdatenew").removeAttr("disabled");
-        }
-        addnew = false;
-
-        $(this).tooltip("hide");
-    });
+    );
 
     // pubadd => check-box functionality
     $(".pubaddformcheck .form-check-input").click(function () {
@@ -354,7 +406,6 @@ $(document).ready(function (e) {
     // PUBLICATION EDITVIEW SECTION ////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
 
-    // pubeditview => REFRESH PUBLICATION EDIT-VIEW
     function pubeditviewrefresh() {
         $(".pubeditviewcard")
             .find("input[type=text]")
@@ -395,8 +446,8 @@ $(document).ready(function (e) {
         $("table.pubeditviewtable tbody tr").remove();
     }
 
-    // pubeditview => DATEPICKER
-    $("#pubeditviewdate").datepicker({
+    // pubeditview, pubprintdate => DATEPICKER
+    $("#pubeditviewdate, #pubprintdate").datepicker({
         minViewMode: 2,
         autoclose: true,
         todayHighlight: true,
@@ -460,6 +511,8 @@ $(document).ready(function (e) {
             var checkbox = $(
                 'table.pubeditviewtable tbody input[type="checkbox"]'
             );
+
+            console.log("test 44 :- ", this.checked);
 
             if (this.checked) {
                 checkbox.each(function () {
@@ -826,9 +879,835 @@ $(document).ready(function (e) {
     // PUBLICATION BIBTEX SECTION ///////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
 
+    // Also see: https://www.quirksmode.org/dom/inputfile.html
+
+    // pubadd => REFRESH FUNCTION
+    function pubbibrefresh() {
+        $(".pubbiblabelnofile").css({ opacity: "" });
+        $(".pubbiblabelnofile").css({
+            color: "#333",
+            "white-space": "nowrap",
+            opacity: 0.3,
+        });
+        $(".pubbiblabelnofile").text("No file selected");
+        $(".pubbib .file-input").removeClass(" -chosen");
+
+        $(".pubbibfile").val("");
+        $("table.pubbibsearchtable tbody tr").remove();
+    }
+
+    $(".pubbibrefresh").click(function () {
+        pubbibrefresh();
+    });
+
+    var inputs = document.querySelectorAll(".pubbib .file-input");
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+        customInput(inputs[i]);
+    }
+
+    function customInput(el) {
+        const fileInput = el.querySelector('[type="file"]');
+        const label = el.querySelector("[data-js-label]");
+
+        fileInput.onchange = fileInput.onmouseout = function () {
+            if (!fileInput.value) return;
+
+            var value = fileInput.value.replace(/^.*[\\\/]/, "");
+            el.className += " -chosen";
+            label.innerText = value;
+        };
+    }
+
+    var reader = new FileReader();
+    let readerdata = "";
+
+    var fileTypes = ["bib"];
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var extension = input.files[0].name.split(".").pop().toLowerCase(), //   extension from input file
+                isSuccess = fileTypes.indexOf(extension) > -1; //is extension in acceptable types
+
+            if (isSuccess) {
+                //yes
+                reader.onload = function (e) {
+                    if (extension === "bib") {
+                        reader.result.toString();
+
+                        var rawLog = reader.result;
+                        readerdata = rawLog;
+                    } else {
+                        swal(
+                            "",
+                            "Uploded document format is not bib!",
+                            "error"
+                        ).then((value) => {
+                            $(".pubbiblabelnofile").css({ opacity: "" });
+                            $(".pubbiblabelnofile").css({
+                                color: "#333",
+                                "white-space": "nowrap",
+                                opacity: 0.3,
+                            });
+                            $(".pubbiblabelnofile").text("No file selected");
+                            $(".pubbib .file-input").removeClass(" -chosen");
+                        });
+                    }
+
+                    dup_title = [];
+                    dup_conference = [];
+                    // ajax call to get data in table
+                    $.ajax({
+                        headers: {
+                            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                                "content"
+                            ),
+                        },
+                        type: "POST",
+                        dataType: "text",
+                        url: url + "/getfiledata",
+                        data: {
+                            filedata: reader.result.replace(/^.+?;base64,/, ""),
+                        },
+                        success: function (data) {
+                            if (reader.result.length > 0) {
+                                // console.log("result :: ", reader.result);
+                            }
+                        },
+                        complete: function () {},
+                        error: function (xhr, errorType, exception) {
+                            console.log(xhr.responseText);
+                            console.log(
+                                "errorType : " +
+                                    errorType +
+                                    " exception : " +
+                                    exception
+                            );
+                        },
+                    });
+
+                    readerdata = reader.result.toString();
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                swal("", "Uploded document format is not bib!", "error").then(
+                    (value) => {
+                        $(".pubbib .file-input").removeClass(" -chosen");
+                        $(".pubbiblabelnofile").css({ opacity: "" });
+                        $(".pubbiblabelnofile").css({
+                            color: "#333",
+                            "white-space": "nowrap",
+                            opacity: 0.3,
+                        });
+                        $(".pubbiblabelnofile").text("No file selected");
+                        $(".pubbib .file-input").removeClass(" -chosen");
+                    }
+                );
+            }
+        }
+    }
+
+    // pubbib = bib file search
+    $(".pubbibfile").change(function () {
+        $("table.pubbibsearchtable tbody tr").remove();
+        readURL(this);
+    });
+
+    dataarr = [];
+    // pubbib = bib data download click
     $(".pubbibbtndownload").click(function (e) {
         e.preventDefault();
+
+        if ($(".pubbibfile").val().length > 0) {
+            $.ajax({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
+                type: "GET",
+                url: url + "/parsebibdata",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    ajaxdata(data);
+                },
+            });
+        } else {
+            swal("", "Please select the file!");
+        }
     });
+
+    var bibtablerow = "";
+    var duplicate = 0;
+
+    // pubbib = bib result table last column click
+    $(document).on(
+        "click",
+        "table.pubbibsearchtable .pubbibdisplay",
+        function (e) {
+            e.preventDefault();
+            // e.stopPropagation();
+            // e.stopImmediatePropagation();
+
+            // td 1 = place
+            // td 2 = issue
+            // td 3 = pages
+            // td 4 = volume
+            // td 5 = publication
+            // td 6 = doi
+            // td 7 = categoryid
+            // td 8 = author
+            // td 9 = checkdup
+            // td 10 = slno
+            // td 11 = dt
+            // td 12 = category
+            // td 13 = title
+            // td 14 = conference
+
+            $(this).tooltip("hide");
+
+            if ($(this).closest("tr").find("td:eq(1)").text() !== "null") {
+                $("#pubbibinputlocation").val(
+                    $(this).closest("tr").find("td:eq(1)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(2)").text() !== "null") {
+                $("#pubbibinputissueno").val(
+                    $(this).closest("tr").find("td:eq(2)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(3)").text() !== "null") {
+                $("#pubbibinputpageno").val(
+                    $(this).closest("tr").find("td:eq(3)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(4)").text() !== "null") {
+                $("#pubbibinputvolumeno").val(
+                    $(this).closest("tr").find("td:eq(4)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(5)").text() !== "null") {
+                $("#pubbibinputpublisher").val(
+                    $(this).closest("tr").find("td:eq(5)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(6)").text() !== "null") {
+                $("#pubbibinputdoi").val(
+                    $(this).closest("tr").find("td:eq(6)").text()
+                );
+            }
+
+            $("#pubbibselectcategory").val(
+                $(this).closest("tr").find("td:eq(7)").text()
+            );
+
+            category = $("#pubbibselectcategory option:selected")
+                .text()
+                .toLowerCase();
+
+            if ($(this).closest("tr").find("td:eq(7)").text() == 8) {
+                $("#pubbibinputimpactfactor").prop("disabled", true);
+            } else if ($(this).closest("tr").find("td:eq(7)").text() == 7) {
+                $("#pubbibselectarticle").prop("disabled", true);
+            }
+
+            var authorarray = $(this)
+                .closest("tr")
+                .find("td:eq(8)")
+                .text()
+                .split(",");
+
+            duplicate = $(this).closest("tr").find("td:eq(9)").text();
+
+            var day = (
+                "0" +
+                new Date(
+                    $(this).closest("tr").find("td:eq(11)").text()
+                ).getDate()
+            ).slice(-2);
+            var month = (
+                "0" +
+                (new Date(
+                    $(this).closest("tr").find("td:eq(11)").text()
+                ).getMonth() +
+                    1)
+            ).slice(-2);
+
+            var dt =
+                new Date(
+                    $(this).closest("tr").find("td:eq(11)").text()
+                ).getFullYear() +
+                "-" +
+                month +
+                "-" +
+                day;
+
+            $("#pubbibinputdate").val(dt);
+
+            if ($(this).closest("tr").find("td:eq(13)").text() !== "null") {
+                $("#pubbibtextareatitle").val(
+                    $(this).closest("tr").find("td:eq(13)").text()
+                );
+            }
+
+            if ($(this).closest("tr").find("td:eq(14)").text() !== "null") {
+                $("#pubbibtextareanameofconference").val(
+                    $(this).closest("tr").find("td:eq(14)").text()
+                );
+            }
+
+            $("table.pubbibtable tbody tr").find("tr:gt(0)").remove();
+            $.each(authorarray, function (i, obj) {
+                bibtablerow =
+                    "<tr><td>" +
+                    (i + 1) +
+                    "</td><td>" +
+                    obj +
+                    "</td>" +
+                    "<td>" +
+                    "<a class='pubbibadd' title='Add' data-toggle='tooltip'><i class='material-icons'>&#xE03B;</i></a>" +
+                    "<a class='pubbibedit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a>" +
+                    "<a class='pubbibdelete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>" +
+                    "</td>" +
+                    "</tr>";
+
+                $("table.pubbibtable tbody").append(bibtablerow);
+            });
+
+            $("main.pubbib .container form .card.bibcard").removeClass(
+                "sectionactive"
+            );
+            $("main.pubbib .container form .card.bibcard").addClass(
+                "sectiondeactive"
+            );
+
+            $("main.pubbib .container form .card.first").css({
+                opacity: "1",
+                "pointer-events": "auto",
+            });
+
+            $("table.pubbibsearchtable tbody tr").remove();
+        }
+    );
+
+    // // pubbib = bib result table last column click
+    // $(document).on(
+    //     "mouseenter",
+    //     "table.pubbibsearchtable .pubbibdisplay",
+    //     function (e) {
+    //         if (
+    //             $(this).closest("tr").find("td:eq(15)").css("color") ===
+    //             "rgb(33, 37, 41)"
+    //         ) {
+    //             $(this)
+    //                 .closest("tr")
+    //                 .find("td:eq(15)")
+    //                 .removeClass("noduplicate");
+
+    //             $(this).closest("tr").find("td:eq(15)").addClass("duplicate");
+    //         }
+    //     }
+    // );
+
+    // pubbib = bib search page back button
+    $(".pubbibbtnbibback").click(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            type: "GET",
+            url: url + "/parsebibdata",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                ajaxdata(data);
+            },
+        });
+
+        $("main.pubbib .container form .card.bibcard").removeClass(
+            "sectiondeactive"
+        );
+        $("main.pubbib .container form .card.bibcard").addClass(
+            "sectionactive"
+        );
+        $("main.pubbib .container form .card.first").css({
+            opacity: "0",
+            "pointer-events": "none",
+        });
+    });
+
+    // pubbib = next button click event
+    $(".pubbibbtnnext").click(function (e) {
+        e.preventDefault();
+
+        nextbutton("pubbib");
+    });
+
+    //pubbib = title keyup
+    $("#pubbibtextareatitle").keyup(function () {
+        if (parseInt(duplicate) > 0) {
+            duplicate = 0;
+        }
+
+        titleduplicate("pubbib");
+    });
+
+    //pubbib = conference keyup
+    $("#pubbibtextareanameofconference").keyup(function () {
+        if (parseInt(duplicate) > 0) {
+            duplicate = 0;
+        }
+
+        conferenceduplicate("pubbib");
+    });
+
+    //pubupdate = Back button click event
+    $(".pubbibbtnback").click(function () {
+        backbutton("pubbib");
+    });
+
+    //pubupdate = pubupdateselectcategory > (select) change
+    $("#pubbibselectcategory").change(function () {
+        categorychange("pubbib");
+    });
+
+    //pubupdate => Append table with add row form on add new button click
+    $(".pubbibnew").click(function (e) {
+        e.preventDefault();
+
+        addnewentry("pubbib");
+        ajaxdata(data);
+    });
+
+    // pubbib => check-box functionality
+    $(".pubbibformcheck .form-check-input").click(function () {
+        $(".pubbibformcheck .form-check-input")
+            .not(this)
+            .prop("checked", false);
+
+        $("#pubbiblabeldate").text($(this).val() + " Date");
+    });
+
+    // pubbib => SAVE RECORDS IN DATABASE
+    $(".pubbibbtnsubmit").click(function (e) {
+        e.preventDefault();
+
+        savedata("pubbib");
+    });
+
+    //pubib = ajaxcall to data for download and back button
+    function ajaxdata(data) {
+        $("table.pubbibsearchtable tbody tr").remove();
+
+        var tabletr = "";
+        var items = "";
+        var displayitem = "";
+        var checkdup = 0;
+        var duplicatedisplay = "";
+
+        dataarr.push(data);
+
+        $.each(data, function (i, obj) {
+            items = "";
+
+            if (obj.duplicatetitle.length > 0 || obj.duplicateconf.length > 0) {
+                displayitem =
+                    "<a class='duplicate' title='Display' data-toggle='tooltip'><i class='material-icons'>&#xe5cd;</i></a>";
+            } else {
+                displayitem =
+                    "<a class='pubbibdisplay noduplicate' title='Display' data-toggle='tooltip'><i class='material-icons'>&#xe409;</i></a>";
+            }
+
+            // only title duplicate = 1
+            if (
+                obj.duplicatetitle.length > 0 &&
+                obj.duplicateconf.length === 0
+            ) {
+                checkdup = 1;
+                duplicatedisplay =
+                    '<div class="col-6 duplicate"><p>Title already exist.</p></div></div>';
+            }
+
+            // only conference duplicate = 2
+            if (
+                obj.duplicatetitle.length === 0 &&
+                obj.duplicateconf.length > 0
+            ) {
+                checkdup = 2;
+                duplicatedisplay =
+                    '<div class="col-6 duplicate"><p>Conference already exist.</p></div></div>';
+            }
+
+            // title & conference duplicate = 3
+            if (obj.duplicatetitle.length > 0 && obj.duplicateconf.length > 0) {
+                checkdup = 3;
+                duplicatedisplay =
+                    '<div class="col-6 duplicate"><p>Tile and Conference already exist.</p></div></div>';
+            }
+
+            if (obj.place !== null) {
+                items =
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>Place : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.place +
+                    "</p>" +
+                    "</div></div>";
+            }
+            if (obj.issue !== null) {
+                items =
+                    items +
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>Issue : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.issue +
+                    "</p>" +
+                    "</div></div>";
+            }
+            if (obj.pages !== null) {
+                items =
+                    items +
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>Pages : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.pages +
+                    "</p>" +
+                    "</div></div>";
+            }
+            if (obj.volume !== null) {
+                items =
+                    items +
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>Volume : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.volume +
+                    "</p>" +
+                    "</div></div>";
+            }
+            if (obj.publisher !== null) {
+                items =
+                    items +
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>Publisher : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.publisher +
+                    "</p>" +
+                    "</div></div>";
+            }
+            if (obj.doi !== null) {
+                items =
+                    items +
+                    '<div class="row g-0"><div class="col-2 internalcol"><p>DOI : </p></div><div class="col-6 internalcol">' +
+                    "<p>" +
+                    obj.doi +
+                    "</p>" +
+                    "</div></div>";
+            }
+
+            tabletr =
+                '<tr class="accordion-toggle collapsed" id="accordion' +
+                i +
+                '" data-bs-toggle="collapse" data-bs-parent="#accordion' +
+                i +
+                '" href="#collapse' +
+                i +
+                '" aria-controls="collapse' +
+                i +
+                '">' +
+                '<td class="expand-button"></td>' +
+                "<td style='display: none;'>" +
+                obj.place +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.issue +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.pages +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.volume +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.publisher +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.doi +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.categoryid +
+                "</td>" +
+                "<td style='display: none;'>" +
+                obj.author +
+                "</td>" +
+                "<td style='display: none;'>" +
+                checkdup +
+                "</td>" +
+                "<td>" +
+                (i + 1) +
+                "</td>" +
+                "<td>" +
+                obj.dt +
+                "</td>" +
+                "<td>" +
+                obj.category +
+                "</td>" +
+                "<td>" +
+                obj.title +
+                "</td>" +
+                "<td>" +
+                obj.conf +
+                "</td>" +
+                "<td>" +
+                displayitem +
+                "</td>" +
+                "</tr>" +
+                '<tr class="hide-table-padding">' +
+                "<td></td>" +
+                '<td colspan="4">' +
+                '<div id="collapse' +
+                i +
+                '" class="collapse in p-3">' +
+                items +
+                '<div class="row g-0"><div class="col-2 internalcol internalcol">Authors : </div><div class="col-10 internalcol">' +
+                obj.author +
+                duplicatedisplay +
+                "</div></div>" +
+                "</div>" +
+                "</td>" +
+                "</tr>";
+
+            $("table.pubbibsearchtable tbody").append(tabletr);
+
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    }
+
+    ////////
+
+    // PUBLICATION PRINT SECTION ////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
+
+    function pubprintrefresh() {
+        $(".pubprintcard")
+            .find("input[type=text]")
+            .each(function () {
+                if (this.id === "pubprintdate") {
+                    $("#" + this.id).val(new Date().getFullYear());
+                } else {
+                    $("#" + this.id).val("");
+                }
+            });
+
+        $(".pubprintcard")
+            .find("input[type=checkbox]")
+            .each(function () {
+                if (
+                    this.id === "pubprintchecksubmitted" ||
+                    this.id === "pubprintcheckaccepted" ||
+                    this.id === "pubprintcheckpublished"
+                ) {
+                    $("#" + this.id).prop("checked", true);
+                } else {
+                    $("#" + this.id).prop("checked", false);
+                }
+            });
+
+        $(".pubprintcard")
+            .find("select")
+            .each(function () {
+                $("#" + this.id).prop("selectedIndex", 0);
+            });
+
+        $(".pubprintcard")
+            .find("textarea")
+            .each(function () {
+                $("#" + this.id).val("");
+            });
+
+        $("table.pubprinttable tbody tr").remove();
+    }
+
+    pubprintrefresh();
+
+    $(".pubprintrefresh").click(function () {
+        pubprintrefresh();
+    });
+
+    // pubprint => SELECT/DESELECT CHECKBOXES IN AUTHOR TABLE
+    $("#selectallprint").click(function () {
+        if ($("table.pubprinttable tbody tr").length > 0) {
+            var checkbox = $(
+                'table.pubprinttable tbody input[type="checkbox"]'
+            );
+
+            if (this.checked) {
+                checkbox.each(function () {
+                    this.checked = true;
+                });
+            } else {
+                checkbox.each(function () {
+                    this.checked = false;
+                });
+            }
+        }
+    });
+
+    // // pubprint => SELECT ALL OR NOT IN AUTHOR SEARCH
+    $("body").on(
+        "click",
+        'table.pubprinttable tbody input[type="checkbox"]',
+        function () {
+            if (!this.checked) {
+                $("#selectallprint").prop("checked", false);
+            }
+        }
+    );
+
+    // pubprint => AUTHOR SEARCH KEYUP IN INPUT TYPE TEXT
+    $("#pubprintinputauthorsearch").keyup(function () {
+        var query = $(this).val();
+
+        if (query != "") {
+            fetch_author_data_print(query);
+        } else {
+            $("table.pubprinttable tbody tr").remove();
+        }
+    });
+
+    // pubprint => fetch_author_data FOR MULIPLE AUTHOR SELECTION
+    function fetch_author_data_print(query = "") {
+        if (query != "") {
+            $.ajax({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
+                type: "GET",
+                url: url + "/printauthorsearch",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: { query: query },
+                success: function (data) {
+                    $("tbody").html("");
+                    if (data.table_data == undefined) {
+                        $(".pubprinttable tr tbody").remove();
+                    } else {
+                        $(".pubprinttable tbody").html(data.table_data);
+                    }
+                },
+                error: function (xhr, errorType) {
+                    var responseTitle = $(xhr.responseText)
+                        .filter("title")
+                        .get(0);
+
+                    swal("Error!", $(responseTitle).text() + "\n" + xhr);
+                },
+            });
+        }
+    }
+
+    // pubprint => PRINT CLICK EVENT
+    $(".pubprintbtnprint").click(function () {
+        printrequest();
+    });
+
+    // pubprint => PRINT REQUEST FUNCTION
+    function printrequest() {
+        var dt = $("#pubprintdate").val();
+        var authortype = $("#pubprintselectauthortype").val();
+        var categoryeditview = $("#pubprintselectcategory").val();
+        var nationality = $("#pubprintselectdemography").val();
+        var title = $("#pubprinttextareatitle").val();
+        var conference = $("#pubprinttextareanameofconference").val();
+        var submitted = $("#pubprintchecksubmitted").is(":checked");
+        var accepted = $("#pubprintcheckaccepted").is(":checked");
+        var published = $("#pubprintcheckpublished").is(":checked");
+
+        var objcheck = {};
+        var arrRankingData = [];
+        $(
+            'main.pubprint .select-field-ranking .pubprintdivul ul li input[type="checkbox"]'
+        ).each(function () {
+            if ($(this).is(":checked")) {
+                objcheck = {
+                    checked: $(this).val(),
+                };
+
+                arrRankingData.push(objcheck);
+            }
+        });
+
+        var objselect = {};
+        var arrAuthor = [];
+        $('table.pubprinttable tbody input[type="checkbox"]').each(function () {
+            if ($(this).is(":checked")) {
+                objselect = {
+                    fullname: $(this).closest("tr").find("td:eq(1)").html(),
+                };
+
+                arrAuthor.push(objselect);
+            }
+        });
+
+        $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            type: "POST",
+            dataType: "text",
+            url: url + "/printrequest",
+            data: {
+                dt: dt,
+                authortype: authortype != "0" ? authortype : null,
+                category: categoryeditview != "0" ? categoryeditview : null,
+                nationality: nationality != "0" ? nationality : null,
+                submitted: submitted,
+                accepted: accepted,
+                published: published,
+                title: title != "" ? title : null,
+                conference: conference != "" ? conference : null,
+                ranking: arrRankingData.length > 0 ? arrRankingData : null,
+                author: arrAuthor.length > 0 ? arrAuthor : null,
+            },
+            success: function (data) {
+                console.log(data);
+
+                // console.log(JSON.parse(data));
+                // if (JSON.parse(data).searchresult.length === 0) {
+                // if (data === "") {
+                //     $(".pubeditviewspan").removeClass("opacitydeactivate");
+                //     $(".pubeditviewspan").addClass("opacityactivate");
+                // } else {
+                //     $(".pubeditviewspan").removeClass("opacityactivate");
+                //     $(".pubeditviewspan").addClass("opacitydeactivate");
+                // }
+                // $("main.pubeditview .container .card.first").removeClass(
+                //     "sectionactive"
+                // );
+                // $("main.pubeditview .container .card.first").addClass(
+                //     "sectiondeactive"
+                // );
+                // $("main.pubeditview .container .card.second").css({
+                //     opacity: "1",
+                //     "pointer-events": "auto",
+                // });
+                // $("table.pubeditviewtablesearchresult tbody").html(data);
+                // $('[data-toggle="tooltip"]').tooltip();
+            },
+            error: function (xhr, errorType) {
+                var responseTitle = $(xhr.responseText).filter("title").get(0);
+
+                console.log(xhr.responseText);
+
+                swal("Error!", $(responseTitle).text() + "\n" + xhr);
+            },
+        });
+    }
 
     ////////
 
@@ -943,13 +1822,13 @@ $(document).ready(function (e) {
 
             if (pub_dup_title && pub_dup_conference) {
                 validateduplicate = true;
-                swal("Please Check!", "Title and Conference already exist.");
+                swal("Please Check!", "Title and Conference already exist!");
             } else if (pub_dup_title && !pub_dup_conference) {
                 validateduplicate = true;
-                swal("Please Check!", "Title  already exist.");
+                swal("Please Check!", "Title  already exist!");
             } else if (!pub_dup_title && pub_dup_conference) {
                 validateduplicate = true;
-                swal("Please Check!", "Conference  already exist.");
+                swal("Please Check!", "Conference  already exist!");
             }
 
             if (!validateduplicate) {
@@ -974,12 +1853,22 @@ $(document).ready(function (e) {
 
     // TITLE DUPLICATE
     function titleduplicate(element) {
-        pub_dup_title = "";
+        pub_dup_title = "123";
 
         var title = $("#" + element + "textareatitle");
 
         //DUPLICATE TITLE CHECK
         if (title.val() != "") {
+            var weburl = "";
+
+            if (element.includes("add")) {
+                weburl = "/check_title_duplication";
+            } else if (element.includes("update")) {
+                weburl = "/check_title_duplication_update";
+            } else if (element.includes("bib")) {
+                weburl = "/check_title_duplication_bib";
+            }
+
             $.ajax({
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
@@ -999,10 +1888,11 @@ $(document).ready(function (e) {
                             ),
                         },
                         type: "GET",
-                        url: url + "/check_title_duplication",
+                        url: url + weburl,
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (data) {
+                            // console.log("data :- ", data);
                             if (data.length > 0) {
                                 pub_dup_title = true;
                             } else {
@@ -1034,6 +1924,16 @@ $(document).ready(function (e) {
 
         //DUPLICATE CONFERENCE CHECK
         if (conference.val() != "") {
+            var weburl = "";
+
+            if (element.includes("add")) {
+                weburl = "/check_conference_duplication";
+            } else if (element.includes("update")) {
+                weburl = "/check_conference_duplication_update";
+            } else if (element.includes("bib")) {
+                weburl = "/check_conference_duplication_bib";
+            }
+
             $.ajax({
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
@@ -1055,7 +1955,7 @@ $(document).ready(function (e) {
                             ),
                         },
                         type: "GET",
-                        url: url + "/check_conference_duplication",
+                        url: url + weburl,
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (data) {
@@ -1217,6 +2117,8 @@ $(document).ready(function (e) {
                 weburl = "/writetodb";
             } else if (element.includes("update")) {
                 weburl = "/updatetodb";
+            } else if (element.includes("bib")) {
+                weburl = "/writebibtodb";
             }
 
             $("table." + element + "table tbody tr")
@@ -1307,6 +2209,23 @@ $(document).ready(function (e) {
                             icon: "success",
                         }).then(function () {
                             window.top.close();
+                        });
+                    } else if (element.includes("bib")) {
+                        swal("", "Record saved successfully!", "success");
+                        pubaddrefresh();
+                        $(
+                            "main.pubbib .container form .card.bibcard"
+                        ).removeClass("sectiondeactive");
+                        $("main.pubbib .container form .card.bibcard").addClass(
+                            "sectionactive"
+                        );
+                        $("main.pubbib .container form .card.second").css({
+                            opacity: "0",
+                            "pointer-events": "none",
+                        });
+                        $("main.pubbib .container form .card.first").css({
+                            opacity: "0",
+                            "pointer-events": "none",
                         });
                     }
                 },

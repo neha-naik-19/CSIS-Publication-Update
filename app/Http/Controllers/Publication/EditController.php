@@ -190,8 +190,6 @@ class EditController extends Controller
                 </td>
                 </tr>';
             }
-
-           
         }
 
         // return response()->json(['searchresult' => $data, 'departmentid' => base64_encode(session()->get('departmentid')), 'department' => base64_encode(session()->get('department'))]);
@@ -204,7 +202,7 @@ class EditController extends Controller
         DB::beginTransaction();
         
         try{
-            DB::table('pubhdrs')->where('id', [$id])->update(['deleted' => 1,'updated_at' => Carbon::now()]);
+            DB::table('pubhdrs')->where('id', [$id])->update(['deleted' => 1,'updated_at' => Carbon::now()->timezone('Asia/kolkata')]);
 
             DB::commit();
             return "{\"msg\":\"success\"}";

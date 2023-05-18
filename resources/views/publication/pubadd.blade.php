@@ -37,7 +37,7 @@
                         <div class="row checkboxrow">
                             <div class="col-md-4 col-sm-12">
                                 <div class="form-check pubaddformcheck">
-                                    <input class="form-check-input" type="checkbox" value="Submitted" id="pubaddchecksubmitted" name="pubaddchecksubmitted">
+                                    <input class="form-check-input" type="checkbox" value="Submitted" id="pubaddchecksubmitted">
                                     <label class="form-check-label" id="pubaddlabelsubmitted">
                                         Submitted
                                     </label>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12">
                                 <div class="form-check pubaddformcheck">
-                                    <input class="form-check-input" type="checkbox" value="Accepted" id="pubaddcheckaccepted" name="pubaddcheckaccepted">
+                                    <input class="form-check-input" type="checkbox" value="Accepted" id="pubaddcheckaccepted">
                                     <label class="form-check-label" id="pubaddlabelaccepted">
                                         Accepted
                                     </label>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12">
                                 <div class="form-check pubaddformcheck">
-                                    <input class="form-check-input" type="checkbox" value="Published" id="pubaddcheckpublished" name="pubaddcheckpublished">
+                                    <input class="form-check-input" type="checkbox" value="Published" id="pubaddcheckpublished">
                                     <label class="form-check-label" id="pubaddlabelpublished">
                                         Published
                                     </label>
@@ -67,7 +67,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabeldate">Date</label>
-                            <input id="pubaddinputdate" name="pubaddinputdate" type="date" max="<?php echo date("Y-m-d"); ?>" placeholder="Enter date" >
+                            <input id="pubaddinputdate" type="date" max="<?php echo date("Y-m-d"); ?>" placeholder="Enter date" >
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -79,7 +79,7 @@
                                 <option value="saab">Saab</option>
                             </select> --}}
 
-                            <select id="pubaddselectauthortype" name="pubaddselectauthortype">
+                            <select id="pubaddselectauthortype">
                                 <option value='0' selected></option>
                                 @foreach($authortypeData['data'] as $authortype)
                                     <option value='{{ $authortype->id }}'>{{ $authortype->authortype }}</option>
@@ -90,7 +90,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelcategory">Category</label>
-                            <select id="pubaddselectcategory" name="pubaddselectcategory">
+                            <select id="pubaddselectcategory">
                                 <option value='0' selected></option>
                                 @foreach($categoryData['data'] as $category)
                                     <option value='{{ $category->id }}'>{{ $category->category }}</option>
@@ -104,7 +104,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabeldemography">Demography</label>
-                            <select id="pubaddselectdemography" name="pubaddselectdemography">
+                            <select id="pubaddselectdemography">
                                 <option value="0" selected></option>
                                 <option value="1">National</option> 
                                 <option value="2">International</option>
@@ -114,7 +114,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelarticle">Type of conference</label>
-                            <select id="pubaddselectarticle" name="pubaddselectarticle">
+                            <select id="pubaddselectarticle">
                                 <option value='0' selected></option>
                             </select>
                         </div>
@@ -122,7 +122,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelranking">Ranking</label>
-                            <select id="pubaddselectranking"  name="pubaddselectranking">
+                            <select id="pubaddselectranking">
                                 <option value='0' selected></option>
                                 @foreach($rankingsData['data'] as $ranking)
                                     <option value='{{ $ranking->id }}'>{{ $ranking->ranking }}</option>
@@ -136,7 +136,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelbroadarea">Broad Area</label>
-                            <select id="pubaddselectbroadarea" name="pubaddselectbroadarea">
+                            <select id="pubaddselectbroadarea">
                                 <option value='0' selected></option>
                                 @foreach($broadareasData['data'] as $broadarea)
                                     <option value='{{ $broadarea->id }}'>{{ $broadarea->broadarea }}</option>
@@ -147,13 +147,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabeltitle">Title of the paper</label>
-                            <textarea id="pubaddtextareatitle" name="pubaddtextareatitle" rows="3" placeholder="Enter paper title"></textarea>
+                            <textarea id="pubaddtextareatitle" rows="3" placeholder="Enter paper title"></textarea>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelnameofconference">Name of Conference/Journal</label>
-                            <textarea id="pubaddtextareanameofconference" name="pubaddtextareanameofconference" rows="3" placeholder="Enter conference/journal"></textarea>
+                            <textarea id="pubaddtextareanameofconference" rows="3" placeholder="Enter conference/journal"></textarea>
                         </div>
                     </div>
                 </div>
@@ -162,19 +162,19 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelimpactfactor">Impact Factor</label>
-                            <input id="pubaddinputimpactfactor" name="pubaddinputimpactfactor" class="allow_numeric" type="text" placeholder="Enter impact factor"  maxlength="6" >
+                            <input id="pubaddinputimpactfactor" class="allow_numeric" type="text" placeholder="Enter impact factor"  maxlength="6" >
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabellocation">Location</label>
-                            <input id="pubaddinputlocation" name="pubaddinputlocation" type="text" placeholder="Enter location" >
+                            <input id="pubaddinputlocation" type="text" placeholder="Enter location" >
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelvolumeno">Volume No.</label>
-                            <input id="pubaddinputvolumeno" name="pubaddinputvolumeno" type="text" placeholder="Enter volume number" />
+                            <input id="pubaddinputvolumeno" type="text" placeholder="Enter volume number" />
                         </div>
                     </div>
                 </div>
@@ -183,19 +183,19 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelissueno">Issue No.</label>
-                            <input id="pubaddinputissueno" name="pubaddinputissueno" type="text" placeholder="Enter issue number" />
+                            <input id="pubaddinputissueno" type="text" placeholder="Enter issue number" />
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelpageno">Page No.</label>
-                            <input id="pubaddinputpageno" name="pubaddinputpageno" type="text" placeholder="Enter page number" />
+                            <input id="pubaddinputpageno" type="text" placeholder="Enter page number" />
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabeldoi">DOI</label>
-                            <input id="pubaddinputdoi" name="pubaddinputdoi" type="text" placeholder="Enter doi" />
+                            <input id="pubaddinputdoi" type="text" placeholder="Enter doi" />
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="input-field">
                             <label id="pubaddlabelpublisher">Publisher</label>
-                            <input id="pubaddinputpublisher" name="pubaddinputpublisher" type="text" placeholder="Enter publisher"  />
+                            <input id="pubaddinputpublisher" type="text" placeholder="Enter publisher"  />
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
         </div>
 
         {{-- card - second --}}
-        <div class="card second">
+        <div class="card second scroll">
             <div class="card-header sticky-top">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">

@@ -64,7 +64,9 @@ Route::get('check_conference_duplication_bib', [App\Http\Controllers\Publication
 // PUBLICATION - PRINT
 Route::get('/publication/print', [App\Http\Controllers\Publication\PrintController::class, 'index'])->name('publication.print');
 Route::get('printauthorsearch', [App\Http\Controllers\Publication\PrintController::class, 'showauthor']);
-Route::post('printrequest',[App\Http\Controllers\Publication\PrintController::class, 'getprintrequest']);
+Route::post('printrequest',[App\Http\Controllers\Publication\PrintController::class, 'getprintfromjs']);
+Route::get('dynamic_pdf/pdf', [App\Http\Controllers\Publication\PrintController::class, 'loadpdf']);
+Route::get('dynamic_word/wordexport', [App\Http\Controllers\Publication\PrintController::class, 'createworddocx']);
 //
 
 

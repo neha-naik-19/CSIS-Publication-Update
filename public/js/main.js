@@ -1613,14 +1613,14 @@ $(document).ready(function (e) {
 
     // pubprint => PRINT CLICK EVENT
     $(".pubprintbtnprint").click(function () {
-        printrequest();
+        printformrequest();
     });
 
     // pubprint => PRINT REQUEST FUNCTION
-    function printrequest() {
+    function printformrequest() {
         var dt = $("#pubprintdate").val();
         var authortype = $("#pubprintselectauthortype").val();
-        var categoryeditview = $("#pubprintselectcategory").val();
+        var categoryprint = $("#pubprintselectcategory").val();
         var nationality = $("#pubprintselectdemography").val();
         var title = $("#pubprinttextareatitle").val();
         var conference = $("#pubprinttextareanameofconference").val();
@@ -1664,7 +1664,7 @@ $(document).ready(function (e) {
             data: {
                 dt: dt,
                 authortype: authortype != "0" ? authortype : null,
-                category: categoryeditview != "0" ? categoryeditview : null,
+                category: categoryprint != "0" ? categoryprint : null,
                 nationality: nationality != "0" ? nationality : null,
                 submitted: submitted,
                 accepted: accepted,

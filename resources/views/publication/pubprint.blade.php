@@ -152,8 +152,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <button type="button" class="btn btn-primary btnpublication pubprintbtnprint">Print &nbsp;<i class="fa fa-solid fa-print"></i></button>
+                    <a href="{{url('dynamic_pdf/pdf')}}" target="_blank">
+                        <button type="button" class="btn btn-primary btnpublication pubprintbtnprint">PDF &nbsp;<i class="fa fa-solid fa-file"></i></button>
+                    </a>
+                    <a href="{{url('dynamic_word/wordexport')}}" target="_blank">
+                        <button type="button" class="btn btn-primary btnpublication pubprintbtnprint">Word File &nbsp;<i class="fa-solid fa-file-word"></i></button>
+                    </a>
                 </div>
             </div>    
         </div>
